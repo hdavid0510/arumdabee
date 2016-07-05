@@ -26,6 +26,10 @@ if exist .\adb\adb.exe (
  set adb=.\adb\adb.exe
  goto _menu
 )
+if exist %1\adb.exe (
+ set adb=%1\adb.exe
+ goto _menu
+)
 
 :_findfile
 echo ^> Finding adb.exe failed.
@@ -58,7 +62,7 @@ echo.
 echo ================================================
 echo               A r u m D a B e e
 echo                easy ADB helper
-echo  v 0.0.1a                          (c)David.Hong
+echo  v 0.0.2a                          (c)David.Hong
 echo ================================================
 echo.
 echo  1  Kill running ADB server
